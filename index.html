@@ -808,18 +808,18 @@
                 });
                 
                 document.getElementById('yesButton').addEventListener('click', function () {
-                    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfveSQDhiXYHVXzJ4A47pniU_bAyzHtuBH9jje_SQlMNCtSeA/viewform?usp=sf_link', {
+                    // Remplacez 'URL_DE_VOTRE_APPLICATION_WEB' par l'URL fournie après le déploiement de votre script Apps Script
+                    fetch('https://script.google.com/macros/s/AKfycbzls7fElcZrYIApD60D3k3w012cp1L_k2_QtgGYxpoRbh595zq6E1WscW8TmreBrQHvRw/exec', {
                         method: 'POST',
-                        mode: 'no-cors',
+                        mode: 'no-cors', // Important pour éviter les problèmes CORS avec Apps Script
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                        body: 'entry.XXXXXXXX=Oui'
+                        // Vous pouvez envoyer des données supplémentaires comme ceci
+                        body: 'response=oui' // Assurez-vous que cela correspond à ce que votre Apps Script attend
                     })
-                        .then(response => {
-                            console.log('Réponse enregistrée avec succès');
-                        })
-                        .catch(error => console.error('Erreur:', error));
+                        .then(response => console.log('Réponse enregistrée avec succès'))
+                        .catch(error => console.error('Erreur lors de l\'enregistrement:', error));
                 });
             </script>
 </body>
