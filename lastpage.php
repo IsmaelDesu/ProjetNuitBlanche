@@ -9,12 +9,6 @@
 </head>
 
 <body>
-    <?php
-    if (isset($_POST['response']) && $_POST['response'] === 'yes') {
-        // Ajoute "oui" dans le fichier response.txt
-        file_put_contents("response.txt", "oui\n", FILE_APPEND);
-    }
-    ?>
     <div id="thankyou"><b>Pleasure to do the business with u</b></div>
     <div class="flower">
         <div class="f-wrapper">
