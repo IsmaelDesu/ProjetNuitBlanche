@@ -806,6 +806,21 @@
                     var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
                     yesButton.style.fontSize = (currentFontSize + 10) + 'px'; // Increase font size by 5px
                 });
+                
+                document.getElementById('yesButton').addEventListener('click', function () {
+                    fetch('https://docs.google.com/forms/d/e/1FAIpQLSfveSQDhiXYHVXzJ4A47pniU_bAyzHtuBH9jje_SQlMNCtSeA/viewform?usp=sf_link', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'entry.XXXXXXXX=Oui'
+                    })
+                        .then(response => {
+                            console.log('Réponse enregistrée avec succès');
+                        })
+                        .catch(error => console.error('Erreur:', error));
+                });
             </script>
 </body>
 
